@@ -1,0 +1,87 @@
+```{r}
+library("tidyverse")
+reservations = read.csv("Hotel_Reservations_finalclean.txt")
+
+reservations
+```
+
+number of days can be a good indicator of whether a person cancels their booking or not. A person would think twice cancelling their booking if its above a certain amount of days. Likewise a person wouldnt really think twice to cancel their booking if it was one or two days. 
+
+```{r}
+reservations = reservations %>% mutate(total_days= weekend_nights_no + weekday_nights_no, nochildren = ifelse(child_no == 1, 1, 0), long_trip = ifelse(total_days < 2, 0, 1)) 
+
+totaldays_summarized = reservations %>% select(canceled, total_days) %>% group_by(total_days) %>% summarize(average_cancellations =sum(canceled)/n())
+
+barplot(totaldays_summarized$average_cancellations, names.arg = totaldays_summarized$total_days, xlab = "total days reserved", ylab = "probability of cancelling", main = "Days reserved in a hotel versus cancellation proportions")
+
+
+
+```
+
+
+```{r}
+library("rcompanion")
+cor(reservations %>% select(canceled, total_days, long_trip))
+tabular_data = table(reservations$canceled, reservations$long_trip)
+chisq.test(tabular_data)
+cramerV(tabular_data)
+reservations%>% select(canceled, long_trip)
+cor(reservations)
+
+```
+We have made an interesting observation. The higher the reservation period, the more likely they are to cancel their booking. This was the opposite of what we originally predicted. Regardless, we will take it for what it is. 
+
+
+The day of the year very much does matter when a person books hotel. This is true because this dataset comes from hotel records from portugal, a country that is a prime example of a tourist heavy country. 
+However, due to the nature of the data we cannot run a correlation function on this. 
+
+```{r}
+seasons_vs_cancellations = reservations %>% select(canceled, month) %>% group_by(month)  %>% summarize(average_cancellations =sum(canceled)/n())
+barplot(seasons_vs_cancellations$average_cancellations, names.arg = seasons_vs_cancellations$month, xlab = "Month Number", ylab = "Probability of Cancellation")
+```
+
+```{r}
+tabular_data_month = table(reservations$canceled, reservations$month)
+tabular_data_month
+chisq.test(tabular_data_month)
+cramerV(tabular_data_month)
+```
+So we now have 2 categorical varibales which can be used. The completed_dataset will now be this:
+
+```{r}
+machine.learning.dataset = reservations %>% select(long_trip, lead_time, avg_price_per_room, special_requests_no, month, prev_show_rate, canceled) 
+cor(machine.learning.dataset)
+machine.learning.dataset
+```
+
+```{r}
+#write.csv(machine.learning.dataset, "C:/Users/aakas/Desktop/Team-A/MLDataset.csv", row.names = FALSE)
+
+```
+
+```{r}
+logistic.regression = glm(canceled ~ long_trip + lead_time + avg_price_per_room + special_requests_no + factor(month)+prev_show_rate, family = binomial, data = machine.learning.dataset)
+summary(logistic.regression)
+```
+
+```{r}
+1 - pchisq(45848, 36237)
+1 - pchisq(33202, 36221)
+
+```
+Very impressively, all of the variables we chose are all significant and contribute a lot of the model on whether a person cancels their booking or not. 
+Furthermore, based o the general goodness of fit test, we can also see that the model explains a large portion of the variance compared to an intercept only model, which implies that the predictors we have chosen are all good. 
+Of course, we proved this before in the previous cells above. This is merely more supporting evidence. 
+This is also our first machine learning model: The logistic regression model. 
+
+
+
+
+After seeing arnabs own dataset, I decided to make a few tweaks to my own model in order to maximize the AUC
+
+```{r}
+reservations
+logistic.regression.better = glm(canceled ~ lead_time + avg_price_per_room + special_requests_no + factor(month)+weekend_nights_no+weekday_nights_no, family = binomial, data = reservations)
+summary(logistic.regression.better)
+
+```
