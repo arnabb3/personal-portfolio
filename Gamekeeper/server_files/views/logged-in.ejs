@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>Logged In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+    <script>
+      function openForm() {
+        document.getElementById("loginPopup").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("loginPopup").style.display = "none";
+      }
+    </script>
+ </head>
+
+ <body>
+  <nav>
+    <div class="logo">
+      <img src="/images/gamekeeper.png" alt="Logo">
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#" class="login-btn" onclick="openForm()">Login</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/friend-finder">Friend Finder</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="loginPopup">
+    <form action="/login" method="GET">
+      <h2>Login</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <button type="submit">Submit</button>
+      <button type="button" class="close" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+  <h1>Filler</h1>
+  <h2>Note: Leaving this page equates to logging out.</h2>
+  <h1>Welcome, <%= account[0].userName %>!</h1>
+  <h2>Your games:</h2>
+  <ul>
+    <% games.forEach(function(game) { %>
+      <li><%= game.gameName %> - <%= game.hoursPlayed %> hours played</li>
+    <% }); %>
+  </ul>
+
+  <div class="card my-form">
+    <div class="card-body">
+      <h2>Let us know about your Steam games</h2>
+      <form action="/insert-game" method="POST">
+        <input type="hidden" name="playerId" value="<%= account[0].playerId %>">
+        <div class="form-group">
+          <label for="gameName">Game Name</label>
+          <input type="text" class="form-control col-lg-9" id="gameName" aria-describedby="emailHelp" placeholder="Enter Game Name" name="gameName">
+          <label for="Password">Hours Played</label>
+          <input type="text" class="form-control col-lg-9" id="hoursPlayed" aria-describedby="emailHelp" placeholder="Enter Hours Played (Default 0)" name="hoursPlayed">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div> 
+</body>
+</html>
