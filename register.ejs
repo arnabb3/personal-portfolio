@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/> 
+    <style>
+      .body {
+        background-color: grey;
+      }
+    </style><script>
+      function openForm() {
+        document.getElementById("loginPopup").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("loginPopup").style.display = "none";
+      }
+    </script>
+ </head>
+
+ <body>
+  <nav>
+    <div class="logo">
+      <img src="/images/gamekeeper.png" alt="Logo">
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#" class="login-btn" onclick="openForm()">Login</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/friend-finder">Friend Finder</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="loginPopup">
+    <form action="/login" method="GET">
+      <h2>Login</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <button type="submit">Submit</button>
+      <button type="button" class="close" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+ 
+   <div class="container">
+    <div class="card my-form">
+      <div class="card-body">
+        <h2>Register for our awesome website!</h2>
+        <form action="mark1" method="POST">
+          <div class="form-group">
+            <label for="Username">Username</label>
+            <input type="text" class="form-control col-lg-9" id="userName" aria-describedby="emailHelp" placeholder="Enter Username" name="userName">
+            <label for="Password">Password</label>
+            <input type="text" class="form-control col-lg-9" id="password" aria-describedby="emailHelp" placeholder="Enter Password" name="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>    
+   <div class="card my-form">
+       <div class="card-body">
+         <h2>Delete your account!</h2>
+         <form action="/mark2" method="GET">
+           <div class="form-group">
+             <label for="Username">Username</label>
+             <input type="text" class="form-control col-lg-9" id="userName" aria-describedby="emailHelp" placeholder="Enter Username" name="userName">
+             <label for="Password">Password</label>
+             <input type="text" class="form-control col-lg-9" id="password" aria-describedby="emailHelp" placeholder="Enter Password" name="password">
+           </div>
+           <button type="submit" class="btn btn-primary">Submit</button>
+         </form>
+         </div>
+   </div>
+   <div class="card my-form">
+    <div class="card-body">
+         <h2>Change your password!</h2>
+         <form action="mark3" method="GET">
+           <div class="form-group">
+             <label for="Username">Username</label>
+             <input type="text" class="form-control col-lg-9" id="userName" aria-describedby="emailHelp" placeholder="Enter Username" name="userName">
+             <label for="Password">Old Password</label>
+             <input type="text" class="form-control col-lg-9" id="old_password" aria-describedby="emailHelp" placeholder="Enter Old Password" name="old_password">
+             <label for="Password">New Password</label>
+             <input type="text" class="form-control col-lg-9" id="new_password" aria-describedby="emailHelp" placeholder="Enter New Password" name="new_password">
+           </div>
+           <button type="submit" class="btn btn-primary">Submit</button>
+         </form>
+        </div>
+   </div>
+   </div>
+ </body>
+</html>
