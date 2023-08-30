@@ -1,9 +1,9 @@
 # Team-A
-Aakash Gupta contributed to: Data Visualizations, Hotel Reservations, Logarithmic Regression, ML Dataset<br> 
 
-Arnav Bhagwat contributed to: Random Forest Algorithm, Data Cleaning, README<br>
-
-Arnab Basu contributed to: Random Forest Optimize, ML Dataset, README<br>
+## Focused Contributions
+Aakash Gupta lead initiatives on: Data Visualizations, Hotel Reservations, Logarithmic Regression, ML Dataset<br> 
+Arnav Bhagwat lead initiatives on: Random Forest Algorithm, Data Cleaning, README<br>
+Arnab Basu lead initiatives on: Random Forest Optimize, ML Dataset, README<br>
 
 
 # Forecasting the Future of Hotel Bookings
