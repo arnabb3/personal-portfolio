@@ -34,14 +34,14 @@ Our repository hosts all data used, both before and after preprocessing for each
 
 Our initial data is derived from: https://www.kaggle.com/datasets/ahsan81/hotel-reservations-classification-dataset
 
-Our proposal which is labeled [TeamA's proposal.pdf](https://github.com/arnabb3/personal-portfolio/blob/main/Reservation_Cancellations/TeamA's%20Proposal.pdf) will give the goals and purpose of this project <br>
-[Hotel Reservations.csv](https://github.com/arnabb3/personal-portfolio/blob/main/Reservation_Cancellations/data/Hotel%20Reservations.csv) is the raw dataset with the 18 predictors <br>
-[MLDataset.csv](https://github.com/arnabb3/personal-portfolio/blob/main/Reservation_Cancellations/data/MLDataset.csv) is the dataset that is used for the random forest model <br>
-[Hotel_Reservations_finalclean.csv](https://github.com/arnabb3/personal-portfolio/blob/main/Reservation_Cancellations/data/Hotel_Reservations_finalclean.txt) is the dataset that is used to make the logarithmic model <br>
-We performed the basic feature selection on [IDSC_project.ipynb](https://github.com/arnabb3/personal-portfolio/blob/main/Reservation_Cancellations/IDSC_project.ipynb) and used that to get a basic idea of what predictors were significant <br>
-All of the data visualizations that were in the presentation were created in [Data Visualizations.ipynb](https://github.com/arnabb3/personal-portfolio/blob/main/Reservation_Cancellations/Data%20visualizations.ipynb) <br>
-The logarithmic model was created and tested in logarithmic [regression algorithim.rmd](https://github.com/arnabb3/personal-portfolio/blob/main/Reservation_Cancellations/logarithmic%20regression%20algorithm.Rmd) <br>
-The random forest algorithm was created in [Random_Forest_Algorithm.ipynb](https://github.com/arnabb3/personal-portfolio/blob/main/Reservation_Cancellations/Random_Forest_Algorithm.ipynb) <br>
+Our proposal which is labeled [TeamA's proposal.pdf](https://github.com/arnabb3/personal-portfolio/blob/main/Cancellation_Analyzer/TeamA's%20Proposal.pdf) will give the goals and purpose of this project <br>
+[Hotel Reservations.csv](https://github.com/arnabb3/personal-portfolio/blob/main/Cancellation_Analyzer/data/Hotel%20Reservations.csv) is the raw dataset with the 18 predictors <br>
+[MLDataset.csv](https://github.com/arnabb3/personal-portfolio/blob/main/Cancellation_Analyzer/data/MLDataset.csv) is the dataset that is used for the random forest model <br>
+[Hotel_Reservations_finalclean.csv](https://github.com/arnabb3/personal-portfolio/blob/main/Cancellation_Analyzer/data/Hotel_Reservations_finalclean.txt) is the dataset that is used to make the logarithmic model <br>
+We performed the basic feature selection on [IDSC_project.ipynb](https://github.com/arnabb3/personal-portfolio/blob/main/Cancellation_Analyzer/IDSC_project.ipynb) and used that to get a basic idea of what predictors were significant <br>
+All of the data visualizations that were in the presentation were created in [Data Visualizations.ipynb](https://github.com/arnabb3/personal-portfolio/blob/main/Cancellation_Analyzer/Data%20visualizations.ipynb) <br>
+The logarithmic model was created and tested in logarithmic [regression algorithim.rmd](https://github.com/arnabb3/personal-portfolio/blob/main/Cancellation_Analyzer/logarithmic%20regression%20algorithm.Rmd) <br>
+The random forest algorithm was created in [Random_Forest_Algorithm.ipynb](https://github.com/arnabb3/personal-portfolio/blob/main/Cancellation_Analyzer/Random_Forest_Algorithm.ipynb) <br>
 
 ## Data Dictionary for MLDataset.csv
 
