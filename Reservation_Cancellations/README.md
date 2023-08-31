@@ -1,11 +1,3 @@
-# Team-A
-
-## Focused Contributions
-Aakash Gupta lead initiatives on: Data Visualizations, Hotel Reservations, Logarithmic Regression, ML Dataset<br> 
-Arnav Bhagwat lead initiatives on: Random Forest Algorithm, Data Cleaning, README<br>
-Arnab Basu lead initiatives on: Random Forest Optimize, ML Dataset, README<br>
-
-
 # Forecasting the Future of Hotel Bookings
 Project Vision: 
 Create a model which holds the ability to accurately predict whether a hotel reservation made by a customer will eventually be cancelled or not.
@@ -40,6 +32,8 @@ Research Questions:
 # Data
 Our repository hosts all data used, both before and after preprocessing for each model. We store this data in the form of .csv and .txt files, which are explained in detail below.
 
+Our initial data is derived from: https://www.kaggle.com/datasets/ahsan81/hotel-reservations-classification-dataset
+
 Our proposal which is labeled {TeamA's proposal.pdf} will give the goals and purpose of this project <br>
 {Hotel Reservations.csv} is the raw dataset with the 18 predictors <br>
 {MLDataset.csv} is the dataset that is used for the random forest model <br>
@@ -49,22 +43,15 @@ All of the data visualizations that were in the presentation were created in {Da
 The logarithmic model was created and tested in logarithmic {regression algorithim.rmd} <br>
 The random forest algorithm was created in {Random_Forest_Algorithm.ipynb} <br>
 
-Data Dictionary for MLDataset.csv <br>
-
-Filter by Cuisine and itll show a bar graph which indicates a bar graph which <br>
+## Data Dictionary for MLDataset.csv
 
 long_trip: A boolean on whether or not the Sum of the number of weekday and weekend nights were greater than 2 <br>
-
 lead_time: How many days in advance a customer booked a hotel room <br>
-
-avg_price_per_room: The average price of the hotel room. It can be subject to change depending on the month and othr circumstances <br>
-
+avg_price_per_room: The average price of the hotel room. It can be subject to change depending on the month and other circumstances <br>
 month: The numbered month in which the hotel room was booked <br>
-
 prev_show_rate: if they had previous bookings, then its the percentage of time they have commited. If they do not have previous bookings, then it defaults to 0.5 <br>
 
-Data Dictionary for Hotel_Reservations_finalclean.txt
-
+## Data Dictionary for Hotel_Reservations_finalclean.txt
 adult_no: Number of Adults who are listed in the hotel reservation <br>
 child_no: Number of Children who are listed in the hotel reservation <br>
 weekend_nights_no: Number of Weekdays the hotel room was booked for <br>
@@ -77,48 +64,26 @@ prev_show_rate: if they had previous bookings, then its the percentage of time t
 
 
 
-Data Dictionary for Hotel Reservations.csv
+## Data Dictionary for Hotel Reservations.csv
 
 Booking_Id:unique identifier of each booking
-
 no_of_adults: Number of adults in booking
-
 no_of_children: Number of Children in booking
-
 no_of_weekend_nights: Number of weekend nights (Saturday or Sunday) the guest stayed or booked to stay at the hotel
-
 no_of_week_nights: Number of week nights (Monday to Friday) the guest stayed or booked to stay at the hotel
-
 type_of_meal_plan: Type of meal plan booked by the customer
-
 required_car_parking_space: Does the customer require a car parking space?
-
 room_type_reserved,lead_time: Type of room reserved by the customer.
-
 arrival_year: Year of arrival date
-
 arrival_month: Month of arrival date
-
 arrival_date: Date of the month that customer is expected to arrive
-
 market_segment_type: Market segment designation(Online/Offline)
-
 repeated_guest: Is the customer a repeated guest? (Have they booked before?)
-
 no_of_previous_cancellations: Number of previous bookings that were canceled by the customer prior to the current booking
-
 no_of_previous_bookings_not_canceled: Number of previous bookings not canceled by the customer prior to the current booking
-
 avg_price_per_room: Average price per day of the reservation; prices of the rooms are dynamic
-
 no_of_special_requests: Total number of special requests made by the customer
-
 booking_status: Flag indicating if the booking was canceled or not
-
-
-# Files
-
-
 
 # Conclusion
 
